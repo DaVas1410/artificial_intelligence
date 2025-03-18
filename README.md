@@ -7,9 +7,11 @@ After cloning this repo, you can follow the links of each project to find in eac
 
 You can also work through the problems yourself! The project description also shows you how to run various game simulations so you can see the AI algorithms in action before your very eyes :)
 
+[Guide on the Projects](https://inst.eecs.berkeley.edu/~cs188/fa24/)
+
 ## Project 1 - Search
 
-[Project 1 description](http://inst.eecs.berkeley.edu/~cs188/fa11/projects/search/search.html)
+
 
 This project deals with search algorithms in AI. The implemented search algorithms will help Pacman traverse through the game board.
 
@@ -24,7 +26,6 @@ This project covers:
 
 ## Project 2 - Multi-Agent Pacman
 
-[Project 2 description](http://inst.eecs.berkeley.edu/~cs188/fa11/projects/multiagent/multiagentProject.html)
 
 This project deals with additional search problems but with multiple agents. In the previous project, Pacman was the only agent. In this project, we have Pacman and the ghosts as well! The main idea is that the search algorithms will take all of the agents into account instead of just Pacman.
 
@@ -38,7 +39,6 @@ This project covers:
 
 ## Project 3 - Reinforcement Learning
 
-[Project 2 description](http://inst.eecs.berkeley.edu/~cs188/fa11/projects/reinforcement/reinforcement.html)
 
 This project deals with different algorithms in reinforcement learning where an agent's action will be based on experience.
 
