@@ -1,7 +1,7 @@
 # Artificial-Intelligence
 Solutions to projects in BerkeleyX: CS188.1x Artificial Intelligence
 
-This was a free course offered at [edx.org](https://www.edx.org/) as an introduction to artificial intelligence. This repo contains solutions to the three projects assigned. Each project is showcased as a Pacman game where the student implements algorithms to win the game.
+This was a free course offered at YachayTech as an introduction to artificial intelligence. This repo contains solutions to the three projects assigned. Each project is showcased as a Pacman game where the student implements algorithms to win the game.
 
 After cloning this repo, you can follow the links of each project to find in each project folder where the algorithms are implemented. All of the solutions are implemented by me and can be found under: "*** YOUR CODE HERE ***" of specific files.
 
