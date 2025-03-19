@@ -200,7 +200,48 @@ class AlphaBetaAgent(MultiAgentSearchAgent):
         Returns the minimax action using self.depth and self.evaluationFunction
         """
         "*** YOUR CODE HERE ***"
-        util.raiseNotDefined()
+        actions = gameState.getLegalActions(self.index)
+        hightscore = -float('inf')
+        best_action = None
+        max_depth = self.depth * gameState.getNumAgents()
+        alpha = -float('inf')
+        beta = float('inf')
+        for action in actions:
+            state = gameState.generateSuccessor(0, action)
+            score = valueAB(state, 1, max_depth, self.evaluationFunction, self.index, hightscore, beta)
+            if score > hightscore:
+                hightscore = score
+                best_action = action
+        return best_action
+    
+def valueAB(gameState, depth, max_depth, evaluationFunction, agentIndex, alpha, beta):
+    if depth == max_depth or gameState.isWin() or gameState.isLose():
+        return evaluationFunction(gameState)  
+    nextAgentIndex = (agentIndex + 1) % gameState.getNumAgents()
+    if nextAgentIndex == 0:
+        return maxValueAB(gameState, depth, max_depth, evaluationFunction, nextAgentIndex, alpha, beta)
+    else:
+        return minValueAB(gameState, depth, max_depth, evaluationFunction, nextAgentIndex, alpha, beta)
+    
+def maxValueAB(gameState, depth, max_depth, evaluationFunction, agentIndex, alpha, beta):
+    v = float("-inf")
+    actions = gameState.getLegalActions(agentIndex)
+    for action in actions:
+        state = gameState.generateSuccessor(agentIndex, action)
+        v = max(v, valueAB(state, depth + 1, max_depth, evaluationFunction, agentIndex, alpha, beta))
+        if v > beta: return v
+        alpha = max(alpha, v)
+    return v
+
+def minValueAB(gameState, depth, max_depth, evaluationFunction, agentIndex, alpha, beta):
+    v = float("inf")
+    actions = gameState.getLegalActions(agentIndex)
+    for action in actions:
+        state = gameState.generateSuccessor(agentIndex, action)
+        v = min(v, valueAB(state, depth + 1, max_depth, evaluationFunction, agentIndex, alpha, beta))
+        if v < alpha: return v
+        beta = min(beta, v)
+    return v
 
 class ExpectimaxAgent(MultiAgentSearchAgent):
     """
